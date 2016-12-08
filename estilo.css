@@ -1,4 +1,5 @@
 .navbar {
+    font-family: 'Source Sans Pro', sans-serif;
     margin-bottom: 0;
     border-radius: 0;
     opacity: 0.95;
@@ -11,20 +12,48 @@ footer {
 }
 
 .carousel-inner img {
-    width: 100%; /* Set width to 100% */
-    margin: auto;
+    width: 100%;
+    max-height:900px;
     min-height:200px;
+    margin: auto;
 }
 
 /* Hide the carousel text when the screen is less than 600 pixels wide */
 @media (max-width: 600px) {
     .carousel-caption {
-        display: none; 
+        display:none; 
     }
+}
+
+#indicadores li{
+    background-color:goldenrod;
+    border-width: 1px;
+    border-color:black;
+}
+
+#controls{
+    background-color:red;
+    
+}
+
+#container{
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+#titulo{
+    font-weight: bold;
 }
 
 .row{
     margin-bottom: 50px;
+}
+
+.row img{
+    width:100%;
+}
+
+#img-spa{
+    height:400px;
 }
 
 #myCarousel{
