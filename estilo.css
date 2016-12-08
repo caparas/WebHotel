@@ -1,14 +1,19 @@
 .navbar {
     font-family: 'Source Sans Pro', sans-serif;
     margin-bottom: 0;
-    border-radius: 0;
-    opacity: 0.95;
+    opacity: 0.9;
+    background-color: black !important;
+    border: 0;
 }
 
-/* Add a gray background color and some padding to the footer */
-footer {
-    background-color: #f2f2f2;
-    padding: 25px;
+.navbar li a, .navbar-brand{
+    color: gold !important;
+}
+
+.navbar-nav li a:hover, .navbar-nav li.active a {
+    color: white!important;
+    background-color: goldenrod !important;
+    transition: 0.5s;
 }
 
 .carousel-inner img {
@@ -18,22 +23,40 @@ footer {
     margin: auto;
 }
 
-/* Hide the carousel text when the screen is less than 600 pixels wide */
 @media (max-width: 600px) {
     .carousel-caption {
         display:none; 
     }
 }
 
+.carousel-control.right, .carousel-control.left {
+    background-image: none !important;
+    opacity: 0.9;
+    
+}
+
+.glyphicon.glyphicon-menu-right, .glyphicon.glyphicon-menu-left{
+    font-size: 200% !important;
+    color: goldenrod;
+    margin-top: 150%;
+}
+
+.item h4 {
+    font-size: 19px;
+    line-height: 1.375em;
+    font-weight: 400;
+    font-style: italic;
+    margin: 70px 0;
+}
+
+.item span {
+    font-style: normal;
+}
+
 #indicadores li{
     background-color:goldenrod;
     border-width: 1px;
     border-color:black;
-}
-
-#controls{
-    background-color:red;
-    
 }
 
 #container{
@@ -53,7 +76,7 @@ footer {
 }
 
 #img-spa{
-    height:400px;
+    height:300px;
 }
 
 #myCarousel{
@@ -62,4 +85,43 @@ footer {
 
 #texto p{
     width:100%;
+}
+
+#correo:invalid{
+    border-width: 2px;
+    border-color: red !important;
+}
+
+#correo:valid{
+    border-width: 2px;
+    border-color:green !important;
+}
+
+hr.hr-editat{
+    border: 0;
+    height: 1px;
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+}
+
+#pls{
+    display:block;
+    width:85%;
+    background-color:DarkCyan;
+    border-width: 2px;
+    border-style:solid;
+    border-color: white;
+    border-radius: 10px;
+    color:white;
+    border-style: outset;
+}
+
+input[type=text] {
+    color:black;
+    border-radius: 5px;
+}
+
+input[type=submit]{
+    background-color:DarkSlateBlue;
+    border-radius: 7px;
+    border-width: 0px;
 }
