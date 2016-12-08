@@ -23,12 +23,6 @@
     margin: auto;
 }
 
-@media (max-width: 600px) {
-    .carousel-caption {
-        display:none; 
-    }
-}
-
 .carousel-control.right, .carousel-control.left {
     background-image: none !important;
     opacity: 0.9;
@@ -105,7 +99,6 @@ hr.hr-editat{
 
 #pls{
     display:block;
-    width:85%;
     background-color:DarkCyan;
     border-width: 2px;
     border-style:solid;
