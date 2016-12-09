@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <title>Hotel</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="estilo.css" rel="stylesheet" type="text/css" />
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
+        <script src="jquery-3.1.1.min.js"></script>
+        <script type="text/javascript" src="jquery.js"></script>
+        <script>
+            window.onload=function() {
+                document.getElementById('my-form').onsubmit=function() {
+                    alert(`Gracias por suscribirse! En breves recibirá nuestras mejores ofertas y promociones en ${document.fdatos.correo.value}`);
+                    return false;
+                }
+            }
+        </script>
+    </head>
+    <body>
+
+        <nav class="navbar navbar-inverse navbar-fixed-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>                        
+                    </button>
+                    <a class="navbar-brand" href="#">Logo</a>
+                </div>
+                <div class="collapse navbar-collapse" id="myNavbar">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="index.html">Inicio</a></li>
+                        <li><a href="descripcion1.html">Descripcion1</a></li>
+                        <li><a href="descripcion2.html">Descripcion2</a></li>
+                        <li class="active"><a href="#">Reservas</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <div id="container">
+            <div class="container">    
+                <div class="jumbotron text-center">
+                    <h1>Reservas</h1> 
+                    <p>Haga sus reservas con un solo clic</p> 
+                </div>
+
+                <div class="row">
+                    <div class="col-sm-10">
+                        <img src="img/Culinary-Safary-buffet.jpg" alt="Buffet safari culinario">
+                    </div>
+                    <div class="col-sm-2" id="texto">
+                        <h3>Buffet safari culinario</h3>
+                        <p>Texto aquí</p>
+                    </div>
+
+                </div>
+                <div class="row">
+                    <div class="col-sm-4" id="texto">
+                        <h3>Spa</h3>
+                        <p>Texto aquí</p>
+                    </div>
+                    <div class="col-sm-8"> 
+                        <img src="img/spa.jpg"alt="Spa" id="img-spa">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12"> 
+                        <img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image">
+                    </div>
+                </div>
+
+                <hr class="hr-editat">
+
+                <div class="foot text-center">
+                    <div class="row">
+                        <div class="col-sm-4">
+                            <div id="pls">
+                                <h4>Contacto</h4>
+                                <span class="glyphicon glyphicon-earphone" aria-hidden="true"></span> 971391037 <br>
+                                    <span class="glyphicon glyphicon-envelope" aria-hidden="true"></span> hoteleshori@hori.com
+                            </div>
+                        </div>
+                        <div class="col-sm-8">
+                            <div id="pls">
+                                <form id="my-form" name="fdatos">
+                                    Reciba nuestras ofertas <input type="text" name="correo" id="correo" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$"  placeholder="correo electrónico"/>
+                                    <input type="submit" value="Suscribirse"/>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
     <head>
-        <title>Bootstrap Example</title>
+        <title>Hotel</title>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link href="estilo.css" rel="stylesheet" type="text/css" />
@@ -9,6 +9,16 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
         <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
+        <script src="jquery-3.1.1.min.js"></script>
+        <script type="text/javascript" src="jquery.js"></script>
+        <script>
+            window.onload=function() {
+                document.getElementById('my-form').onsubmit=function() {
+                    alert(`Gracias por suscribirse! En breves recibirá nuestras mejores ofertas y promociones en ${document.fdatos.correo.value}`);
+                    return false;
+                }
+            }
+        </script>
     </head>
     <body>
 
@@ -27,7 +37,7 @@
                         <li class="active"><a href="#">Inicio</a></li>
                         <li><a href="descripcion1.html">Descripcion1</a></li>
                         <li><a href="descripcion2.html">Descripcion2</a></li>
-                        <li><a href="contacto.html">Contacto</a></li>
+                        <li><a href="reservas.html">Reservas</a></li>
                     </ul>
                 </div>
             </div>
@@ -70,19 +80,21 @@
                 </div>
 
                 <!-- Left and right controls -->
-                <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
-                    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-                    <span class="sr-only">Previous</span>
-                </a>
-                <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
-                    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-                    <span class="sr-only">Next</span>
-                </a>
+                <div id="try">
+                    <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+                        <span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span>
+                        <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+                        <span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span>
+                        <span class="sr-only">Next</span>
+                    </a>
+                </div>
             </div>
 
-            <div class="container text-center">    
-                <h1 id="titulo">Qué ofrecemos</h1><br>
-                <div class="row">
+            <div class="container">    
+                <h1 id="titulo" class="slideanim text-center">Qué ofrecemos</h1>
+                <div class="row slideanim">
                     <div class="col-sm-10">
                         <img src="img/Culinary-Safary-buffet.jpg" alt="Buffet safari culinario">
                     </div>
@@ -92,7 +104,7 @@
                     </div>
 
                 </div>
-                <div class="row">
+                <div class="row slideanim">
                     <div class="col-sm-4" id="texto">
                         <h3>Spa</h3>
                         <p>Texto aquí</p>
@@ -101,9 +113,31 @@
                         <img src="img/spa.jpg"alt="Spa" id="img-spa">
                     </div>
                 </div>
-                <div class="row">
+                <div class="row slideanim">
                     <div class="col-sm-12"> 
                         <img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image">
+                    </div>
+                </div>
+
+                <hr class="hr-editat">
+
+                <div class="foot text-center">
+                    <div class="row">
+                        <div class="col-sm-4">
+                            <div id="pls">
+                                <h4>Contacto</h4>
+                                <p><span class="glyphicon glyphicon-earphone" aria-hidden="true"></span> 971391037 <br>
+                                    <span class="glyphicon glyphicon-envelope" aria-hidden="true"></span> hoteleshori@hori.com</p>
+                            </div>
+                        </div>
+                        <div class="col-sm-8">
+                            <div id="pls">
+                                <form id="my-form" name="fdatos">
+                                    Reciba nuestras ofertas <input type="text" name="correo" id="correo" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" value="Introduzca su e-mail"/>
+                                    <input type="submit" value="Suscribirse" >
+                                </form>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
