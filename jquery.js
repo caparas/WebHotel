@@ -4,7 +4,9 @@ $(window).scroll(function() {
 
     var winTop = $(window).scrollTop();
     if (pos < winTop + 600) {
-      $(this).addClass("slide");
+      $(this).addClass("slidepls");
+      $(this).addClass("slidepls1");
+      $(this).addClass("slidepls2");
     }
   });
 });

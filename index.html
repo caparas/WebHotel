@@ -22,6 +22,7 @@
     </head>
     <body>
 
+        <!-- NAVBAR -->
         <nav class="navbar navbar-inverse navbar-fixed-top">
             <div class="container">
                 <div class="navbar-header">
@@ -42,9 +43,11 @@
                 </div>
             </div>
         </nav>
+        <!-- FIN NAVBAR -->
         <div id="container">
+
+            <!-- CAROUSEL-->
             <div id="myCarousel" class="carousel slide" data-ride="carousel">
-                <!-- Indicators -->
                 <ol class="carousel-indicators" id="indicadores">
                     <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
                     <li data-target="#myCarousel" data-slide-to="1"></li>
@@ -52,7 +55,6 @@
                     <li data-target="#myCarousel" data-slide-to="3"></li>
                 </ol>
 
-                <!-- Wrapper for slides -->
                 <div class="carousel-inner" role="listbox">
                     <div class="item active">
                         <img src="img/es-fum.jpg" alt="Restaurante 'Es fum'">
@@ -79,7 +81,6 @@
                     </div>
                 </div>
 
-                <!-- Left and right controls -->
                 <div id="try">
                     <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
                         <span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span>
@@ -91,7 +92,9 @@
                     </a>
                 </div>
             </div>
+            <!-- FIN CAROUSEL -->
 
+            <!-- CONTENEDOR PRINCIPAL -->
             <div class="container">    
                 <h1 id="titulo" class="slideanim text-center">Qué ofrecemos</h1>
                 <div class="row slideanim">
@@ -119,27 +122,31 @@
                     </div>
                 </div>
 
+                <!-- FIN CONTENEDOR PRINCIPAL -->
                 <hr class="hr-editat">
-
+                <!-- PIE DE PÁGINA -->
                 <div class="foot text-center">
                     <div class="row">
                         <div class="col-sm-4">
                             <div id="pls">
                                 <h4>Contacto</h4>
-                                <p><span class="glyphicon glyphicon-earphone" aria-hidden="true"></span> 971391037 <br>
-                                    <span class="glyphicon glyphicon-envelope" aria-hidden="true"></span> hoteleshori@hori.com</p>
+                                <p>
+                                    <span class="glyphicon glyphicon-earphone" aria-hidden="true"></span> 971391037 <br>
+                                    <span class="glyphicon glyphicon-envelope" aria-hidden="true"></span> hoteleshori@hori.com
+                                </p>
                             </div>
                         </div>
                         <div class="col-sm-8">
                             <div id="pls">
                                 <form id="my-form" name="fdatos">
-                                    Reciba nuestras ofertas <input type="text" name="correo" id="correo" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" value="Introduzca su e-mail"/>
+                                    Reciba nuestras ofertas <input type="text" name="correo" id="correo" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" placeholder="correo electrónico"/>
                                     <input type="submit" value="Suscribirse" >
                                 </form>
                             </div>
                         </div>
                     </div>
                 </div>
+                <!-- FIN PIE DE PÁGINA -->
             </div>
         </div>
     </body>
