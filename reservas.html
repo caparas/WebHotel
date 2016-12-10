@@ -21,7 +21,7 @@
         </script>
     </head>
     <body>
-
+        <!-- NAVBAR -->
         <nav class="navbar navbar-inverse navbar-fixed-top">
             <div class="container">
                 <div class="navbar-header">
@@ -42,56 +42,224 @@
                 </div>
             </div>
         </nav>
-        <div id="container">
-            <div class="container">    
-                <div class="jumbotron text-center">
-                    <h1>Reservas</h1> 
-                    <p>Haga sus reservas con un solo clic</p> 
-                </div>
+        <!-- FIN NAVBAR -->
+        <!-- CONTENEDOR PRINCIPAL -->
+        <div class="container">    
+            <div class="jumbotron text-center">
+                <h1>Reservas</h1> 
+                <p>Haga sus reservas con un solo clic</p> 
+            </div>
 
+            <div class="container-fluid ">
+                <div class="row slidepls">
+                    <div class="col-sm-4 slidepls">
+                        <div class="panel panel-default text-center">
+                            <div class="panel-heading">
+                                <h1>Habitación doble</h1>
+                            </div>
+                            <div class="panel-body">
+                                <!-- CAROUSEL -->
+                                <div id="Carouseldoble" class="carousel slide" data-ride="carousel">
+                                    <ol class="carousel-indicators" id="indicadores">
+                                        <li data-target="#Carouseldoble" data-slide-to="0" class="active"></li>
+                                        <li data-target="#Carouseldoble" data-slide-to="1"></li>
+                                        <li data-target="#Carouseldoble" data-slide-to="2"></li>
+                                        <li data-target="#Carouseldoble" data-slide-to="3"></li>
+                                    </ol>
+
+                                    <div class="carousel-inner" role="listbox">
+                                        <div class="item active">
+                                            <img src="img/es-fum.jpg" alt="Restaurante 'Es fum'">
+                                            <div class="carousel-caption">
+                                            </div>      
+                                        </div>
+
+                                        <div class="item">
+                                            <img src="img/suit.jpg" alt="Suite Diamante">
+                                            <div class="carousel-caption">
+                                            </div>      
+                                        </div>
+
+                                        <div class="item">
+                                            <img src="img/suite2.jpg" alt="Suite Solaris">
+                                            <div class="carousel-caption">
+                                            </div>      
+                                        </div>
+
+                                        <div class="item">
+                                            <img src="img/Restaurant-Aqua.jpg" alt="Restaurante Aqua">
+                                            <div class="carousel-caption">
+                                            </div>      
+                                        </div>
+                                    </div>
+
+                                    <div id="try">
+                                        <a class="left carousel-control" href="#Carouseldoble" role="button" data-slide="prev">
+                                            <span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span>
+                                            <span class="sr-only">Previous</span>
+                                        </a>
+                                        <a class="right carousel-control" href="#Carouseldoble" role="button" data-slide="next">
+                                            <span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span>
+                                            <span class="sr-only">Next</span>
+                                        </a>
+                                    </div>
+                                </div>
+
+                                <!-- FIN CAROUSEL -->
+                            </div>
+                            <div class="panel-footer">
+                                <h1>89€</h1>
+                                <h4>por noche</h4>
+                                <button class="btn btn-lg">Reservar</button>
+                            </div>
+                        </div> 
+                    </div> 
+                    <div class="col-sm-4 slidepls1">
+                        <div class="panel panel-default text-center">
+                            <div class="panel-heading">
+                                <h1>Habitación triple</h1>
+                            </div>
+                            <div class="panel-body">
+                                <!-- CAROUSEL -->
+                                <div id="Carouseltriple" class="carousel slide" data-ride="carousel">
+                                    <ol class="carousel-indicators" id="indicadores">
+                                        <li data-target="#Carouseltriple" data-slide-to="0" class="active"></li>
+                                        <li data-target="#Carouseltriple" data-slide-to="1"></li>
+                                        <li data-target="#Carouseltriple" data-slide-to="2"></li>
+                                        <li data-target="#Carouseltriple" data-slide-to="3"></li>
+                                    </ol>
+
+                                    <div class="carousel-inner" role="listbox">
+                                        <div class="item active">
+                                            <img src="img/es-fum.jpg" alt="Restaurante 'Es fum'">
+                                            <div class="carousel-caption">
+                                            </div>      
+                                        </div>
+
+                                        <div class="item">
+                                            <img src="img/suit.jpg" alt="Suite Diamante">
+                                            <div class="carousel-caption">
+                                            </div>      
+                                        </div>
+
+                                        <div class="item">
+                                            <img src="img/suite2.jpg" alt="Suite Solaris">
+                                            <div class="carousel-caption">
+                                            </div>      
+                                        </div>
+
+                                        <div class="item">
+                                            <img src="img/Restaurant-Aqua.jpg" alt="Restaurante Aqua">
+                                            <div class="carousel-caption">
+                                            </div>      
+                                        </div>
+                                    </div>
+
+                                    <div id="try">
+                                        <a class="left carousel-control" href="#Carouseltriple" role="button" data-slide="prev">
+                                            <span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span>
+                                            <span class="sr-only">Previous</span>
+                                        </a>
+                                        <a class="right carousel-control" href="#Carouseltriple" role="button" data-slide="next">
+                                            <span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span>
+                                            <span class="sr-only">Next</span>
+                                        </a>
+                                    </div>
+                                </div>
+
+                                <!-- FIN CAROUSEL -->
+                            </div>
+                            <div class="panel-footer">
+                                <h1>129€</h1>
+                                <h4>por noche</h4>
+                                <button class="btn btn-lg">Reservar</button>
+                            </div>
+                        </div> 
+                    </div> 
+                    <div class="col-sm-4 slidepls2">
+                        <div class="panel panel-default text-center">
+                            <div class="panel-heading">
+                                <h1>Suite</h1>
+                            </div>
+                            <div class="panel-body">
+                                <!-- CAROUSEL -->
+                                <div id="Carouselsuite" class="carousel slide" data-ride="carousel">
+                                    <ol class="carousel-indicators" id="indicadores">
+                                        <li data-target="#Carouselsuite" data-slide-to="0" class="active"></li>
+                                        <li data-target="#Carouselsuite" data-slide-to="1"></li>
+                                        <li data-target="#Carouselsuite" data-slide-to="2"></li>
+                                        <li data-target="#Carouselsuite" data-slide-to="3"></li>
+                                    </ol>
+
+                                    <div class="carousel-inner" role="listbox">
+                                        <div class="item active">
+                                            <img src="img/es-fum.jpg" alt="Restaurante 'Es fum'">
+                                            <div class="carousel-caption">
+                                            </div>      
+                                        </div>
+
+                                        <div class="item">
+                                            <img src="img/suit.jpg" alt="Suite Diamante">
+                                            <div class="carousel-caption">
+                                            </div>      
+                                        </div>
+
+                                        <div class="item">
+                                            <img src="img/suite2.jpg" alt="Suite Solaris">
+                                            <div class="carousel-caption">
+                                            </div>      
+                                        </div>
+
+                                        <div class="item">
+                                            <img src="img/Restaurant-Aqua.jpg" alt="Restaurante Aqua">
+                                            <div class="carousel-caption">
+                                            </div>      
+                                        </div>
+                                    </div>
+
+                                    <div id="try">
+                                        <a class="left carousel-control" href="#Carouselsuite" role="button" data-slide="prev">
+                                            <span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span>
+                                            <span class="sr-only">Previous</span>
+                                        </a>
+                                        <a class="right carousel-control" href="#Carouselsuite" role="button" data-slide="next">
+                                            <span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span>
+                                            <span class="sr-only">Next</span>
+                                        </a>
+                                    </div>
+                                </div>
+
+                                <!-- FIN CAROUSEL -->
+                            </div>
+                            <div class="panel-footer">
+                                <h1>274€</h1>
+                                <h4>por noche</h4>
+                                <button class="btn btn-lg">Reservar</button>
+                            </div>
+                        </div> 
+                    </div> 
+                </div>
+            </div>
+
+            <hr class="hr-editat">
+
+            <div class="foot text-center">
                 <div class="row">
-                    <div class="col-sm-10">
-                        <img src="img/Culinary-Safary-buffet.jpg" alt="Buffet safari culinario">
-                    </div>
-                    <div class="col-sm-2" id="texto">
-                        <h3>Buffet safari culinario</h3>
-                        <p>Texto aquí</p>
-                    </div>
-
-                </div>
-                <div class="row">
-                    <div class="col-sm-4" id="texto">
-                        <h3>Spa</h3>
-                        <p>Texto aquí</p>
-                    </div>
-                    <div class="col-sm-8"> 
-                        <img src="img/spa.jpg"alt="Spa" id="img-spa">
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-sm-12"> 
-                        <img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image">
-                    </div>
-                </div>
-
-                <hr class="hr-editat">
-
-                <div class="foot text-center">
-                    <div class="row">
-                        <div class="col-sm-4">
-                            <div id="pls">
-                                <h4>Contacto</h4>
+                    <div class="col-sm-4">
+                        <div id="pls">
+                            <h4>Contacto</h4>
+                            <p>
                                 <span class="glyphicon glyphicon-earphone" aria-hidden="true"></span> 971391037 <br>
-                                    <span class="glyphicon glyphicon-envelope" aria-hidden="true"></span> hoteleshori@hori.com
-                            </div>
+                                <span class="glyphicon glyphicon-envelope" aria-hidden="true"></span> hoteleshori@hori.com
+                            </p>
                         </div>
-                        <div class="col-sm-8">
-                            <div id="pls">
-                                <form id="my-form" name="fdatos">
-                                    Reciba nuestras ofertas <input type="text" name="correo" id="correo" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$"  placeholder="correo electrónico"/>
-                                    <input type="submit" value="Suscribirse"/>
-                                </form>
-                            </div>
+                    </div>
+                    <div class="col-sm-8">
+                        <div id="pls">
+                            <form id="my-form" name="fdatos">
+                                Reciba nuestras ofertas <input type="text" name="correo" id="correo" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$"  placeholder="correo electrónico"/>
+                                <input type="submit" value="Suscribirse"/>
+                            </form>
                         </div>
                     </div>
                 </div>

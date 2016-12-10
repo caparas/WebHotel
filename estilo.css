@@ -1,7 +1,7 @@
 .navbar {
     font-family: 'Source Sans Pro', sans-serif;
     margin-bottom: 0;
-    opacity: 0.9;
+    opacity: 0.95;
     background-color: black !important;
     border: 0;
 }
@@ -99,14 +99,14 @@ hr.hr-editat{
 }
 
 #pls{
+    padding: 5px 0 5px 0;
+    margin-left:10%;
+    width:80%;
     display:block;
-    background-color:DarkCyan;
-    border-width: 2px;
-    border-style:solid;
-    border-color: white;
+    background-color:black;
+    border: 2px solid goldenrod;
     border-radius: 10px;
-    color:white;
-    border-style: outset;
+    color:goldenrod;
 }
 
 input[type=text] {
@@ -115,14 +115,17 @@ input[type=text] {
 }
 
 input[type=submit]{
-    background-color:DarkSlateBlue;
+    font-weight: bold;
+    color: black;
+    background-color:goldenrod;
     border-radius: 7px;
     border-width: 0px;
 }
 
 
 .jumbotron{
-    border-radius: 0px !important;
+    border: 2px solid goldenrod;
+    border-radius: 5px !important;
     margin-top:55px;
     background-color:black !important;
     color:goldenrod !important;
@@ -132,18 +135,42 @@ input[type=submit]{
     .jumbotron p{
         display:none;
     }
-  }
+}
 
 
 
 .slideanim {visibility:hidden;}
-.slide {
+.slidepls {
     /* The name of the animation */
     animation-name: slide;
     -webkit-animation-name: slide; 
     /* The duration of the animation */
     animation-duration: 1s; 
     -webkit-animation-duration: 1s;
+    /* Make the element visible */
+    visibility: visible; 
+}
+
+
+.slidepls1 {
+    /* The name of the animation */
+    animation-name: slide;
+    -webkit-animation-name: slide; 
+    /* The duration of the animation */
+    animation-duration: 1.5s; 
+    -webkit-animation-duration: 1.5s;
+    /* Make the element visible */
+    visibility: visible; 
+}
+
+
+.slidepls2 {
+    /* The name of the animation */
+    animation-name: slide;
+    -webkit-animation-name: slide; 
+    /* The duration of the animation */
+    animation-duration: 2s; 
+    -webkit-animation-duration: 2s;
     /* Make the element visible */
     visibility: visible; 
 }
@@ -168,4 +195,44 @@ input[type=submit]{
         opacity: 1;
         -webkit-transform: translateY(0%);
     }
+}
+
+.panel {
+    border: 2px solid gold !important; 
+    border-radius:5px !important;
+    transition: box-shadow 0.5s;
+}
+
+.panel:hover {
+    box-shadow: 3px 0px 40px rgba(0,0,0, .6);
+}
+.panel-footer .btn {
+    transition: 0.5s;
+    background-color:goldenrod;
+    color:black;
+}
+
+.panel-footer .btn:hover {
+    border: 1px solid goldenrod;
+    background-color: black !important;
+    color: goldenrod;
+}
+
+.panel-heading {
+    color: goldenrod !important;
+    background-color: black !important;
+    padding: 25px;
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+}
+
+.panel-body{
+    padding: 0px !important;
+}
+
+.panel-footer {
+    color: goldenrod !important;
+    background-color: black !important;
 }
