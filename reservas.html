@@ -13,10 +13,54 @@
         <script type="text/javascript" src="jquery.js"></script>
         <script>
             window.onload=function() {
+                var startCambiado=false, endCambiado=false, clickon;
+
+
                 document.getElementById('my-form').onsubmit=function() {
                     alert(`Gracias por suscribirse! En breves recibirá nuestras mejores ofertas y promociones en ${document.fdatos.correo.value}`);
                     return false;
                 }
+
+                document.getElementById("habdoble").onclick=function(){
+                    clickon="doble";
+                    return false;
+                }
+
+                document.getElementById("habtriple").onclick=function(){
+                    clickon="triple";
+                    return false;
+                }
+
+                document.getElementById("habsuite").onclick=function(){
+                    clickon="suite";
+                    return false;
+                }
+
+                document.getElementById("start").onchange=function(){
+                    startCambiado=true;
+                    if(endCambiado){
+                        alert(`has cambiado la fecha de entrada y salida`);
+                        var start = moment(document.getElementById("start").value);
+                        var end = moment(document.getElementById("end").value);
+                        alert(`pls ${moment.duration(end.diff(start)).asDays()}`);
+                    }
+                    return false;
+                }
+
+                document.getElementById("end").onchange=function(){
+                    endCambiado=true;
+                    if(startCambiado){
+                        alert(`has cambiado la fecha de entrada y salida`);
+                        var start = moment(document.getElementById("start").value);
+                        var end = moment(document.getElementById("end").value);
+                        alert(`pls ${moment.duration(end.diff(start)).asDays()}`);
+                    }
+                    return false;
+                }
+            }
+
+            var getEventTime = function(){
+
             }
         </script>
     </head>
@@ -110,7 +154,7 @@
                             <div class="panel-footer">
                                 <h1>89€</h1>
                                 <h4>por noche</h4>
-                                <button class="btn btn-lg">Reservar</button>
+                                <button class="btn btn-lg" id="habdoble" data-toggle="collapse" data-target="#calendario">Reservar</button>
                             </div>
                         </div> 
                     </div> 
@@ -172,7 +216,7 @@
                             <div class="panel-footer">
                                 <h1>129€</h1>
                                 <h4>por noche</h4>
-                                <button class="btn btn-lg">Reservar</button>
+                                <button class="btn btn-lg" id="habtriple" data-toggle="collapse" data-target="#calendario">Reservar</button>
                             </div>
                         </div> 
                     </div> 
@@ -234,10 +278,18 @@
                             <div class="panel-footer">
                                 <h1>274€</h1>
                                 <h4>por noche</h4>
-                                <button class="btn btn-lg">Reservar</button>
+                                <button class="btn btn-lg" id="habsuite" data-toggle="collapse" data-target="#calendario">Reservar</button>
                             </div>
                         </div> 
                     </div> 
+                </div>
+
+                <div id="calendario" class="collapse text-center">
+                    <p> prova</p>
+                    <form>
+                        <input type="date" id="start" onchange="getEventTime()">
+                        <input type="date" id="end" onchange="getEventTime()">
+                    </form>
                 </div>
             </div>
 
