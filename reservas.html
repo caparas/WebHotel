@@ -1,23 +1,28 @@
 <!DOCTYPE html>
 <html lang="es">
     <head>
-        <title>Hotel</title>
+        <title>Hotel - Reservas</title>
         <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
         <link href="estilo.css" rel="stylesheet" type="text/css" />
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-        <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
-        <script src="jquery-3.1.1.min.js"></script>
+        <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet"/>
         <script type="text/javascript" src="jquery.js"></script>
+        <script src="http://momentjs.com/downloads/moment-with-locales.js"></script> 
         <script>
-            window.onload=function() {
-                var startCambiado=false, endCambiado=false, clickon;
 
+            window.onload=function() {
+
+                var clickon;
 
                 document.getElementById('my-form').onsubmit=function() {
-                    alert(`Gracias por suscribirse! En breves recibirá nuestras mejores ofertas y promociones en ${document.fdatos.correo.value}`);
+                    if (document.fdatos.correo.value!=""){
+                        alert(`Gracias por suscribirse! En breves recibirá nuestras mejores ofertas y promociones en ${document.fdatos.correo.value}`);
+                    }else{
+                        alert(`Para suscribirse debe introducir un correo electrónico válido.`);
+                    }
                     return false;
                 }
 
@@ -36,31 +41,35 @@
                     return false;
                 }
 
-                document.getElementById("start").onchange=function(){
-                    startCambiado=true;
-                    if(endCambiado){
-                        alert(`has cambiado la fecha de entrada y salida`);
-                        var start = moment(document.getElementById("start").value);
-                        var end = moment(document.getElementById("end").value);
-                        alert(`pls ${moment.duration(end.diff(start)).asDays()}`);
+                document.getElementById('calendario').onsubmit=function(){
+
+
+                    var start = document.getElementById("start").value;
+                    var end = document.getElementById("end").value;
+
+                    if((start=="" || end=="")){
+                        alert(`Debe introducir una fecha de salida y de entrada para proceder.`);
+                    }else if(start>end){
+                        alert(`La fecha de entrada no puede ser posterior a la de salida.`);
+                    }else{
+                        var rdm, res, dif, calculo;
+                        rdm = (Math.random() * 2);
+                        res = parseInt(rdm)+1;
+                        dif = moment(end).diff(start);
+                        calculo = Math.round(moment.duration(dif).asDays());
+                        start = moment(start).locale("es").format("LL");
+                        end = moment(end).locale("es").format("LL");
+
+
+                        if(res%2==0){
+                            alert(`Reserva realizada con éxito para la habitación ${clickon} desde el ${start} hasta el ${end}, que son ${calculo} dias.`);
+                        }
+                        else{
+                            alert(`Lo sentimos, la habitación ${clickon} ya está reservada los ${calculo} dias entre el ${start} y el ${end}.`);
+                        }
                     }
                     return false;
                 }
-
-                document.getElementById("end").onchange=function(){
-                    endCambiado=true;
-                    if(startCambiado){
-                        alert(`has cambiado la fecha de entrada y salida`);
-                        var start = moment(document.getElementById("start").value);
-                        var end = moment(document.getElementById("end").value);
-                        alert(`pls ${moment.duration(end.diff(start)).asDays()}`);
-                    }
-                    return false;
-                }
-            }
-
-            var getEventTime = function(){
-
             }
         </script>
     </head>
@@ -285,10 +294,12 @@
                 </div>
 
                 <div id="calendario" class="collapse text-center">
-                    <p> prova</p>
+                    <h1>Elija la fecha de entrada y salida</h1>
                     <form>
-                        <input type="date" id="start" onchange="getEventTime()">
-                        <input type="date" id="end" onchange="getEventTime()">
+                        <input type="date" id="start" min="2016-12-31">
+                        <input type="date" id="end" max="2025-12-31"><br>
+                        <br>
+                        <input type="submit" value="Reservar" class="btn btn-lg"/>
                     </form>
                 </div>
             </div>
@@ -310,7 +321,7 @@
                         <div id="pls">
                             <form id="my-form" name="fdatos">
                                 Reciba nuestras ofertas <input type="text" name="correo" id="correo" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$"  placeholder="correo electrónico"/>
-                                <input type="submit" value="Suscribirse"/>
+                                <input type="submit" value="Suscribirse" id="enviar"/>
                             </form>
                         </div>
                     </div>
