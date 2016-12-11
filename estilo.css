@@ -252,3 +252,34 @@ input[type=text] {
     color: goldenrod;
 }
 
+input[type=date] {
+    width:40%;
+    font-size: 25px;
+    font-weight: bold;
+    text-transform: uppercase;
+    background-color: black;
+    border: 1px solid goldenrod;
+    border-radius: 4px;
+    padding: 0 10px;
+    color: white;
+}
+@media (max-width: 720px) {
+    input[type=date] {
+        width:90%;
+    }
+}
+input::-webkit-datetime-edit-month-field {
+    color: goldenrod;
+}
+input::-webkit-datetime-edit-day-field {
+    color: goldenrod;
+}
+input::-webkit-datetime-edit-year-field {
+    color: goldenrod;
+}
+
+input::-webkit-calendar-picker-indicator {
+    color:goldenrod;
+    background-color:black;
+}
+
