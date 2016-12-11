@@ -1,20 +1,23 @@
 <!DOCTYPE html>
 <html lang="es">
     <head>
-        <title>Hotel</title>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Hotel - Inicio</title>
+        <meta charset="utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
         <link href="estilo.css" rel="stylesheet" type="text/css" />
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-        <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
-        <script src="jquery-3.1.1.min.js"></script>
+        <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet"/>
         <script type="text/javascript" src="jquery.js"></script>
         <script>
             window.onload=function() {
                 document.getElementById('my-form').onsubmit=function() {
-                    alert(`Gracias por suscribirse! En breves recibirá nuestras mejores ofertas y promociones en ${document.fdatos.correo.value}`);
+                    if (document.fdatos.correo.value!=""){
+                        alert(`Gracias por suscribirse! En breves recibirá nuestras mejores ofertas y promociones en ${document.fdatos.correo.value}`);
+                    }else{
+                        alert(`Para suscribirse debe introducir un correo electrónico válido.`);
+                    }
                     return false;
                 }
             }
@@ -96,7 +99,7 @@
 
             <!-- CONTENEDOR PRINCIPAL -->
             <div class="container">    
-                <h1 id="titulo" class="slideanim text-center">Qué ofrecemos</h1>
+                <h1 id="titulo" class="slidepls text-center">Qué ofrecemos</h1>
                 <div class="row slideanim">
                     <div class="col-sm-10">
                         <img src="img/Culinary-Safary-buffet.jpg" alt="Buffet safari culinario">
@@ -140,7 +143,7 @@
                             <div id="pls">
                                 <form id="my-form" name="fdatos">
                                     Reciba nuestras ofertas <input type="text" name="correo" id="correo" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" placeholder="correo electrónico"/>
-                                    <input type="submit" value="Suscribirse" >
+                                    <input type="submit" value="Suscribirse" id="enviar"/>
                                 </form>
                             </div>
                         </div>

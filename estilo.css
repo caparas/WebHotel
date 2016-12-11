@@ -82,6 +82,8 @@
     width:100%;
 }
 
+/* Pie de página */
+
 #correo:invalid{
     border-width: 2px;
     border-color: red !important;
@@ -114,14 +116,24 @@ input[type=text] {
     border-radius: 5px;
 }
 
-input[type=submit]{
+#enviar{
     font-weight: bold;
     color: black;
     background-color:goldenrod;
     border-radius: 7px;
-    border-width: 0px;
+    border: 1px solid black;
+    transition: 0.4s;
 }
 
+#enviar:hover, #enviar:active{
+    font-weight: bold;
+    color: goldenrod;
+    background-color:black;
+    border-radius: 7px;
+    border: 1px solid goldenrod;
+}
+
+/* Jumbotron de reservas.html */
 
 .jumbotron{
     border: 2px solid goldenrod;
@@ -137,7 +149,7 @@ input[type=submit]{
     }
 }
 
-
+/* Animación de como aparecen las cosas */
 
 .slideanim {visibility:hidden;}
 .slidepls {
@@ -157,8 +169,8 @@ input[type=submit]{
     animation-name: slide;
     -webkit-animation-name: slide; 
     /* The duration of the animation */
-    animation-duration: 1.5s; 
-    -webkit-animation-duration: 1.5s;
+    animation-duration: 1.6s; 
+    -webkit-animation-duration: 1.6s;
     /* Make the element visible */
     visibility: visible; 
 }
@@ -169,13 +181,12 @@ input[type=submit]{
     animation-name: slide;
     -webkit-animation-name: slide; 
     /* The duration of the animation */
-    animation-duration: 2s; 
-    -webkit-animation-duration: 2s;
+    animation-duration: 2.2s; 
+    -webkit-animation-duration: 2.2s;
     /* Make the element visible */
     visibility: visible; 
 }
 
-/* Go from 0% to 100% opacity (see-through) and specify the percentage from when to slide in the element along the Y-axis */
 @keyframes slide {
     0% {
         opacity: 0;
@@ -197,6 +208,8 @@ input[type=submit]{
     }
 }
 
+/* Paneles de reservas.html */
+
 .panel {
     border: 2px solid gold !important; 
     border-radius:5px !important;
@@ -205,17 +218,6 @@ input[type=submit]{
 
 .panel:hover {
     box-shadow: 3px 0px 40px rgba(0,0,0, .6);
-}
-.panel-footer .btn {
-    transition: 0.5s;
-    background-color:goldenrod;
-    color:black;
-}
-
-.panel-footer .btn:hover {
-    border: 1px solid goldenrod;
-    background-color: black !important;
-    color: goldenrod;
 }
 
 .panel-heading {
@@ -236,3 +238,17 @@ input[type=submit]{
     color: goldenrod !important;
     background-color: black !important;
 }
+
+.panel-footer .btn, #calendario .btn {
+    transition: 0.5s;
+    background-color:goldenrod;
+    color:black;
+    border: 1px solid black;
+}
+
+.panel-footer .btn:hover, #calendario .btn:hover {
+    border: 1px solid goldenrod;
+    background-color: black !important;
+    color: goldenrod;
+}
+
