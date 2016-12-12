@@ -10,13 +10,15 @@
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
         <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet"/>
         <script type="text/javascript" src="jquery.js"></script>
+        <link rel="stylesheet" href="//cdn.jsdelivr.net/alertifyjs/1.8.0/css/alertify.min.css"/>
+        <link rel="stylesheet" href="//cdn.jsdelivr.net/alertifyjs/1.8.0/css/themes/bootstrap.min.css"/>
         <script>
             window.onload=function() {
                 document.getElementById('my-form').onsubmit=function() {
                     if (document.fdatos.correo.value!=""){
-                        alert(`Gracias por suscribirse! En breves recibirá nuestras mejores ofertas y promociones en ${document.fdatos.correo.value}`);
+                        alertify.alert(`Gracias por suscribirse! En breves recibirá nuestras mejores ofertas y promociones en ${document.fdatos.correo.value}`);
                     }else{
-                        alert(`Para suscribirse debe introducir un correo electrónico válido.`);
+                        alertify.alert(`Para suscribirse debe introducir un correo electrónico válido.`);
                     }
                     return false;
                 }

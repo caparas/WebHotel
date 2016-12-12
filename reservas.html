@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="es">
     <head>
@@ -10,7 +11,10 @@
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
         <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet"/>
         <script type="text/javascript" src="jquery.js"></script>
-        <script src="http://momentjs.com/downloads/moment-with-locales.js"></script> 
+        <script src="http://momentjs.com/downloads/moment-with-locales.js"></script>
+        <script src="//cdn.jsdelivr.net/alertifyjs/1.8.0/alertify.min.js"></script>
+        <link rel="stylesheet" href="//cdn.jsdelivr.net/alertifyjs/1.8.0/css/alertify.min.css"/>
+        <link rel="stylesheet" href="//cdn.jsdelivr.net/alertifyjs/1.8.0/css/themes/bootstrap.min.css"/>
         <script>
 
             window.onload=function() {
@@ -19,9 +23,9 @@
 
                 document.getElementById('my-form').onsubmit=function() {
                     if (document.fdatos.correo.value!=""){
-                        alert(`Gracias por suscribirse! En breves recibirá nuestras mejores ofertas y promociones en ${document.fdatos.correo.value}`);
+                        alertify.alert(`Gracias por suscribirse! En breves recibirá nuestras mejores ofertas y promociones en ${document.fdatos.correo.value}`);
                     }else{
-                        alert(`Para suscribirse debe introducir un correo electrónico válido.`);
+                        alertify.alert(`Para suscribirse debe introducir un correo electrónico válido.`);
                     }
                     return false;
                 }
@@ -46,14 +50,13 @@
 
                 document.getElementById('calendario').onsubmit=function(){
 
-
                     var start = document.getElementById("start").value;
                     var end = document.getElementById("end").value;
 
                     if((start=="" || end=="")){
-                        alert(`Debe introducir una fecha de salida y de entrada para proceder.`);
+                        alertify.alert(`Debe introducir una fecha de salida y de entrada para proceder.`);
                     }else if(start>end){
-                        alert(`La fecha de entrada no puede ser posterior a la de salida.`);
+                        alertify.alert(`La fecha de entrada no puede ser posterior a la de salida.`);
                     }else{
                         var rdm, res, dif, calculo, total;
                         rdm = (Math.random() * 2);
@@ -70,10 +73,10 @@
                         }
 
                         if(res%2==0){
-                            alert(`Reserva realizada con éxito para la habitación ${clickon} desde el ${start} hasta el ${end}, que son ${calculo} noches. En total, es un coste de ${total}€.`);
-                        }
-                        else{
-                            alert(`Lo sentimos, la habitación ${clickon} ya está reservada las ${calculo} noches entre el ${start} y el ${end}. En total, era un coste de ${total}€.`);
+
+                            alertify.confirm(`Reserva realizada con éxito para la habitación ${clickon} desde el ${start} hasta el ${end}, que son ${calculo} noches. En total, es un coste de ${total}€.`, function(){alertify.success('RESERVA REALIZADA CON ÉXITO')}, function(){alertify.error('RESERVA CANCELADA')});
+                        }else{
+                            alertify.alert(`Lo sentimos, la habitación ${clickon} ya está reservada las ${calculo} noches entre el ${start} y el ${end}. En total, era un coste de ${total}€.`);
                         }
                     }
                     return false;
