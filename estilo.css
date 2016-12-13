@@ -239,17 +239,17 @@ input[type=text] {
     background-color: black !important;
 }
 
-.panel-footer .btn, #calendario .btn {
+.btn{
     transition: 0.5s;
     background-color:goldenrod;
     color:black;
     border: 1px solid black;
 }
 
-.panel-footer .btn:hover, #calendario .btn:hover {
+.btn:hover{
     border: 1px solid goldenrod;
     background-color: black !important;
-    color: goldenrod;
+    color: goldenrod !important;
 }
 
 input[type=date] {
@@ -294,7 +294,7 @@ input::-webkit-calendar-picker-indicator {
     font-size: 1.5em;
 }
 .alertify .ajs-header {
-        display:none;
+    display:none;
     background-color: black !important;
     color: black !important;
     border-bottom: 1px solid black !important;
@@ -327,4 +327,18 @@ input::-webkit-calendar-picker-indicator {
     background-color:black !important;
 }
 
-
+.rating {
+    margin-bottom:5%;
+    unicode-bidi: bidi-override;
+    direction: rtl;
+    float:left;
+}
+.rating > span{
+    display: inline-block;
+}
+.rating > span:hover:before,
+.rating > span:hover ~ span:before{
+    position:inherit;
+    content: "\f005";
+    color:goldenrod;
+}

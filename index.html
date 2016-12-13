@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="es">
     <head>
-        <title>Hotel - Inicio</title>
+        <title>Hotel Riviera - Inicio</title>
         <meta charset="utf-8"/>
         <meta name="viewport" content="width=device-width, initial-scale=1"/>
         <link href="estilo.css" rel="stylesheet" type="text/css" />
@@ -10,9 +10,15 @@
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
         <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet"/>
         <script type="text/javascript" src="jquery.js"></script>
+        <script src="//cdn.jsdelivr.net/alertifyjs/1.8.0/alertify.min.js"></script>
         <link rel="stylesheet" href="//cdn.jsdelivr.net/alertifyjs/1.8.0/css/alertify.min.css"/>
         <link rel="stylesheet" href="//cdn.jsdelivr.net/alertifyjs/1.8.0/css/themes/bootstrap.min.css"/>
+        <link rel="stylesheet" href="hover.css" media="all"/>
+        <link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css" media="all"/>
+        <link rel="icon" type="image/png" href="img/iconor.png"/>
         <script>
+            var stars=0;
+
             window.onload=function() {
                 document.getElementById('my-form').onsubmit=function() {
                     if (document.fdatos.correo.value!=""){
@@ -22,7 +28,78 @@
                     }
                     return false;
                 }
+
+                document.getElementById('valForm').onsubmit=function() {
+                    if (document.datos.comentario.value==""){
+                        if (stars<3){
+                            alertify.alert(`Gracias por su valoración de un ${stars}/5. Nos gustaría saber que errores hemos cometido y como corregirlos, así que sería de gran ayuda adjuntar un comentario.`);
+                        }else{
+                            alertify.alert(`Gracias por su valoración de un ${stars}/5. Nos gustaría saber el motivo por el cual ha dado esta valoración tan elevada.`);
+                        }
+                    }else{
+                        if (stars<3){
+                        alertify.alert(`Gracias por su valoración de un ${stars}/5 y su comentario "${document.datos.comentario.value}". Su opinión es muy importante para nosotros y la tendremos encuenta para cambios inmediatos.`);
+                        }else{
+                        alertify.alert(`Gracias por su valoración de un ${stars}/5 y su comentario "${document.datos.comentario.value}", el cual nos ayuda a mejorar y a crecer como empresa.`);
+                        }
+                    }
+                    return false;
+                }
             }
+
+            function ratingS(valor){
+                stars=valor;
+                switch (valor){
+                    case 1:
+                        vaciar("5s");
+                        vaciar("4s");
+                        vaciar("3s");
+                        vaciar("2s");
+                        llenar("1s");
+                        break;
+                    case 2:
+                        vaciar("5s");
+                        vaciar("4s");
+                        vaciar("3s");
+                        llenar("2s");
+                        llenar("1s");
+                        break;
+                    case 3:
+                        vaciar("5s");
+                        vaciar("4s");
+                        llenar("3s");
+                        llenar("2s");
+                        llenar("1s");
+                        break;
+                    case 4:
+                        vaciar("5s");
+                        llenar("4s");
+                        llenar("3s");
+                        llenar("2s");
+                        llenar("1s");
+                        break;
+                    case 5:
+                        llenar("5s");
+                        llenar("4s");
+                        llenar("3s");
+                        llenar("2s");
+                        llenar("1s");
+                        break;
+                }
+
+            }
+
+            function llenar(x){
+                document.getElementById(x).className = "fa fa-star fa-3x";
+                document.getElementById(x).style.color = "goldenrod";
+            }
+
+            function vaciar(x){
+                document.getElementById(x).className = "fa fa-star-o fa-3x";
+                document.getElementById(x).style.color = "black";
+            }
+
+
         </script>
     </head>
     <body>
@@ -36,7 +113,7 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>                        
                     </button>
-                    <a class="navbar-brand" href="#">Logo</a>
+                    <a class="navbar-brand" href="#">Hotel Riviera</a>
                 </div>
                 <div class="collapse navbar-collapse" id="myNavbar">
                     <ul class="nav navbar-nav navbar-right">
@@ -126,6 +203,25 @@
                         <img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image">
                     </div>
                 </div>
+                <div class="row slideanim">
+                    <div class="col-sm-7">
+                        valoraciones clientes
+                    </div>
+                    <div class="col-sm-5">
+                        <h1>Valore nuestro servicio</h1>
+                        <form name="datos" id="valForm">
+                            <div class="rating">
+                                <span onclick="ratingS(5)" class="fa fa-star-o fa-3x" aria-hidden="true" id="5s"></span>
+                                <span onclick="ratingS(4)" class="fa fa-star-o fa-3x" aria-hidden="true" id="4s"></span>
+                                <span onclick="ratingS(3)" class="fa fa-star-o fa-3x" aria-hidden="true" id="3s"></span>
+                                <span onclick="ratingS(2)" class="fa fa-star-o fa-3x" aria-hidden="true" id="2s"></span>
+                                <span onclick="ratingS(1)" class="fa fa-star-o fa-3x" aria-hidden="true" id="1s"></span>
+                            </div>
+                            <textarea name="comentario" cols="50" rows="5" placeholder="Introduzca si lo desea cualquier sugerencia, queja o comentario."></textarea><br>
+                            <input type="submit" value="Enviar" class="btn btn-lg hvr-pulse-grow"/>
+                        </form>
+                    </div>
+                </div>
 
                 <!-- FIN CONTENEDOR PRINCIPAL -->
                 <hr class="hr-editat">
@@ -137,7 +233,7 @@
                                 <h4>Contacto</h4>
                                 <p>
                                     <span class="glyphicon glyphicon-earphone" aria-hidden="true"></span> 971391037 <br>
-                                    <span class="glyphicon glyphicon-envelope" aria-hidden="true"></span> hoteleshori@hori.com
+                                    <span class="glyphicon glyphicon-envelope" aria-hidden="true"></span> hotelriviera@riviera.com
                                 </p>
                             </div>
                         </div>
@@ -145,7 +241,7 @@
                             <div id="pls">
                                 <form id="my-form" name="fdatos">
                                     Reciba nuestras ofertas <input type="text" name="correo" id="correo" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" placeholder="correo electrónico"/>
-                                    <input type="submit" value="Suscribirse" id="enviar"/>
+                                    <input type="submit" value="Suscribirse" id="enviar" class="hvr-buzz"/>
                                 </form>
                             </div>
                         </div>
